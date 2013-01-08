@@ -1,0 +1,28 @@
+
+So various dependency breaking techniques.
+
+  - adapt parameter
+  - break out method object
+  - encapsulate global references
+  - expose static method
+  - extract and override call
+  - extract and override getter
+  - extract implementer
+  - extract interface
+  - introduce instance delegator
+  - introduce static setter
+  - parameterize constructor
+  - parameterize method
+  - primitivize parameter
+  - pull up feature
+  - push down dependency
+  
+
+
+
+
+Interesting things to do
+
+  - feature sketching
+  - tell the story of the system
+
