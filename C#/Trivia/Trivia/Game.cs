@@ -64,6 +64,9 @@ namespace UglyTrivia
             return players.Count;
         }
 
+		//we know there is something to do with PenaltyBox
+		//
+
         public void roll(int roll)
         {
             Console.WriteLine(players[currentPlayer] + " is the current player");
@@ -76,7 +79,7 @@ namespace UglyTrivia
                     isGettingOutOfPenaltyBox = true;
 
                     Console.WriteLine(players[currentPlayer] + " is getting out of the penalty box");
-                    places[currentPlayer] = places[currentPlayer] + roll;
+            	        places[currentPlayer] = places[currentPlayer] + roll;
                     if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 
                     Console.WriteLine(players[currentPlayer]

@@ -70,5 +70,6 @@
   -->
   <ItemGroup>
     <None Include="notes.txt" />
+    <None Include="Chapters.txt" />
   </ItemGroup>
 </Project>

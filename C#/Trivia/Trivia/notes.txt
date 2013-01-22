@@ -26,3 +26,18 @@ Interesting things to do
   - feature sketching
   - tell the story of the system
 
+ 
+ - throwing/refactoring away tests after a change is made 
+ 
+ 
+ 3 Ss
+ 
+ Sensing, seperation & seams.
+ 
+ In systems that weren't developed concurrently with unit tests, we often have to break dependencies to get classes into a test harness.
+
+ Sensing - we break depedencies when we can't access values our code computes.
+ 
+ Seperation - we break dependencies to separate when we can't even get a peice of code into a test harness to run. 
+ 
+ NOTE: we are freedom fighters we are revolutionaires fight the good fight.

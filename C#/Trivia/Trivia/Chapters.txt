@@ -1,0 +1,146 @@
+Chapter 1
+
+1. There are four reasons to change software.
+2. Fixing a bug
+3. Improving the design
+4. Optimizing resource usage.
+
+Making a change is about changing a small amount of behaviour but preserving a lot more existing behaviour
+
+To mitigate risk we need to ask 3 questions
+
+1. What changes do we have to make?
+2. How will we know that we've done them correctly?
+3. How do we know we haven't broken anything?
+
+Chapter 2
+Working with Feedback
+
+Changes are 
+Edit & Pray or Cover & modify
+Talks about unit testing but then there are sometimes where we find it difficult to break down the code. 
+
+Sometimes is a better idea to test a class that uses the class. 
+
+Even then it can be difficult to find a point to test at.
+
+The legacy code dilemma.
+
+When we change code we should have tests in place. To put tests in place we often have to change the code.
+
+The legacy code algorithm
+1. Identify change points
+2. Find change points
+3. break dependencies
+4. write tests
+5. make changes & refactor
+
+ 
+Chapter 3 Sensing & separation 
+ 
+ 3 Ss
+ 
+ Sensing, seperation & seams.
+ 
+ In systems that weren't developed concurrently with unit tests, we often have to break dependencies to get classes into a test harness.
+
+ Sensing - we break depedencies when we can't access values our code computes.
+ 
+ Seperation - we break dependencies to separate when we can't even get a peice of code into a test harness to run. 
+ 
+ Chapter 4
+ 
+ Seams
+ 
+ A place in the code where you can alter behaviour in your program without editing in that place.
+ 
+ Object seams / preprocessing seams / link seams.
+ 
+ Mainly look at object seams.
+ 
+ Chapter 5 Tools
+ 
+ xUnits
+ Higher level tests
+ FIT[nesse]
+ 
+ Chapter 6 
+ 
+ I don't have much time and I have to change it.
+ 
+ Tests create additional work.
+ 
+ sprout method
+ 	_ giving up on the code
+ 	+ seperating new code from old
+ sprout class
+   + not making invasive changes
+   - adding more complexity
+ 	
+ wrap method
+ 	+ great place to introduce seams.
+ 	- can lead to poor nameing
+ 	
+ 	Good to use when there is no tests.
+ 	
+ 	
+ wrap class aka Decorator pattern.
+ 
+ The biggest obstacle to improvement in large bases is the exisiting code. It's very easy to believe it will always be ugly and that any little thing you do to make it better  is not woth it.
+ But if you consistently make little improvements your syste will start to look different after a couple of months.
+ 
+ Chapter 7 it takes forever to make a change
+ 
+ Why is this?
+ 
+ Understanding
+ 
+ As the amount of code grows the understanding begins to degrade.
+ In a well maintained system how to make a change may take a while but the change should be quick. In legacy it can take a long time to figure oyt what to do & the change is difficult.
+ In worst cases it seems like no amount of time will be enough to understand enough so you go in blind.
+ 
+ Lag time
+ If your code is not under test and continuous integration it can be minutes to get any sort of compilation feedback and longer to know if your code actually does what you want it too!
+ 
+ Breaking Dependencies
+ 
+ Build Dependencies
+ 
+ e.g. DB stuff. 
+ 
+ Chapter 8?
+ 
+ How do I add a feature?
+ The hazards of making a change
+  - we don't change the current code significantly
+  - we could introduce duplication
+  - fear & resignation 
+  
+Fear that we can't change a particular piece of code and make it easier to work with.
+And 
+Resignation that the code is not going to get any better.
+  
+Techniques  
+Programming by difference
+just instantiating a sub class and just putting the one difference in.
+Test Driven development
+
+Chapter 9
+I can't get this class into a test harness.
+
+1. Objects of the class can't be created easily.
+2. The test harness won't easily the build with the class in it.
+3. The constructor we need to use had bad side effects. 
+4. Significant work happens in the constructor and we need to sense it.
+
+The case of the irritating parameter
+extract interface
+
+The case of the hidden dependency
+- parameterize constructor , extract interface 
+- safe to do with out tests cos we can preserve signatures
+- extract and override getter
+- extract and override factory methods
+- supersede instance variable
+
+The case of the constructions blob
