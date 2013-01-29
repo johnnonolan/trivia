@@ -144,3 +144,34 @@ The case of the hidden dependency
 - supersede instance variable
 
 The case of the constructions blob
+
+a construction blob is where there are many dependencies in the ctor. Some may even construct other objects.
+to break these dependencies we can override factory method or supersedeCursor
+
+The case of the irritating Global Dependency
+make ctor protected and subclass
+
+The case of the onion parameter
+To create obj in paremeter we need to create another obj ad infinitum
+PAss Null
+Extract interface
+Extract implementor 
+
+Sealed classes.
+Wrap in interface , reimplement interfaces.
+
+The case of the undetectable side effect
+
+
+Chapter 11
+
+Reasoning about effects
+For every functional change there is some associtated chain of effects.
+
+(declarations) --> (getDeclarationCount)
+(any declaration in delcarations) --^
+
+Chapter 12
+Interception points writing high level tests.
+
+

@@ -1,0 +1,7 @@
+Algorithm
+
+1. Use a piece of code in a test harness
+2. Write an assertation that you know will fail.
+3. Let the failure tell you what the behaviour is.
+4. Change the test so that it expects the behaviour that code produces.
+5. Repeat

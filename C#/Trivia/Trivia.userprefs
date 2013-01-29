@@ -1,20 +1,22 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Trivia/Game.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Trivia-tests/GameTests.cs">
     <Files>
-      <File FileName="Trivia/Game.cs" Line="19" Column="1" />
-      <File FileName="Trivia/GameRunner.cs" Line="32" Column="30" />
-      <File FileName="Trivia-tests/Test.cs" Line="9" Column="6" />
-      <File FileName="Trivia/notes.txt" Line="20" Column="1" />
+      <File FileName="Trivia/Game.cs" Line="150" Column="10" />
+      <File FileName="Trivia/GameRunner.cs" Line="32" Column="45" />
+      <File FileName="Trivia-tests/GameTests.cs" Line="13" Column="27" />
+      <File FileName="Trivia/notes.txt" Line="43" Column="76" />
+      <File FileName="Trivia/characterizationTests.txt" Line="7" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Option id="ShowAllFiles" value="True" />
-          <Node name="Trivia" expanded="True">
-            <Node name="notes.txt" selected="True" />
+          <Node name="Trivia" expanded="True" />
+          <Node name="Trivia-tests" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="GameTests.cs" selected="True" />
           </Node>
-          <Node name="Trivia-tests" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">
@@ -25,13 +27,18 @@
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State />
       </Pad>
+      <Pad Id="ConnectionManagerPad">
+        <State selected="True" />
+      </Pad>
       <Pad Id="MonoDevelop.NUnit.TestPad">
         <State expanded="True" selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/johnnolan/Code/trivia/C#/Trivia/Trivia/Game.cs" line="154" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
