@@ -26,7 +26,7 @@ Global
 		{DA66C768-2FE7-4E92-BDA5-E8DE115E38DD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Trivia-tests\Trivia-tests.csproj
+		StartupItem = Trivia\Trivia.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
