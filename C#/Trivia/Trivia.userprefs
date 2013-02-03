@@ -1,22 +1,22 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Trivia/GameRunner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Trivia-tests/GameTests.cs">
     <Files>
-      <File FileName="Trivia/Game.cs" Line="139" Column="10" />
-      <File FileName="Trivia/GameRunner.cs" Line="31" Column="14" />
-      <File FileName="Trivia-tests/GameTests.cs" Line="33" Column="3" />
-      <File FileName="Trivia/notes.txt" Line="43" Column="76" />
-      <File FileName="Trivia/characterizationTests.txt" Line="7" Column="10" />
+      <File FileName="Trivia/Game.cs" Line="92" Column="18" />
+      <File FileName="Trivia/GameRunner.cs" Line="32" Column="44" />
+      <File FileName="Trivia-tests/GameTests.cs" Line="48" Column="22" />
+      <File FileName="Trivia/notes.txt" Line="21" Column="1" />
+      <File FileName="Trivia/characterizationTests.txt" Line="8" Column="1" />
+      <File FileName="Trivia/PossibleFeatures.txt" Line="4" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Option id="ShowAllFiles" value="True" />
-          <Node name="Trivia" expanded="True">
-            <Node name="GameRunner.cs" selected="True" />
-          </Node>
+          <Node name="Trivia" expanded="True" />
           <Node name="Trivia-tests" expanded="True">
             <Node name="References" expanded="True" />
+            <Node name="GameTests.cs" selected="True" />
           </Node>
         </State>
       </Pad>

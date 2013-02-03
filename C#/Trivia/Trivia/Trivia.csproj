@@ -73,5 +73,6 @@
     <None Include="Chapters.txt" />
     <None Include="characterizationTests.txt" />
     <None Include="PossibleFeatures.txt" />
+    <None Include="FeatureSketch.txt" />
   </ItemGroup>
 </Project>

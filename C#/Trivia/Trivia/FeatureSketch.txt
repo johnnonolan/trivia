@@ -1,0 +1,44 @@
+players
+places 
+purses
+inPenaltyBox
+popQuestions
+scienceQuestions
+sportsQuestions
+rockQuestions
+currentPlayer
+isGettingOutOfPenaltyBox 
+
+
+players <-- howManyPlayers()
+        <-- Add()
+        <-- Roll()
+        <-- wasCorrectlyAnswered()
+        <-- wrongAnswer()
+        
+places <-- add()
+       <-- roll()
+       <-- currentCategory()
+       
+purses <-- add()
+       <-- wasCorrectlyAnswered()
+       <-- didPlayerWin()
+       
+inPenaltyBox <-- add()
+			<-- roll()
+			<-- wasCorrectlyAnswered()
+			<-- wrongAnswer()	
+popQuestions 
+   			<-- askQuestion
+scienceQuestions
+   			<-- askQuestion
+sportsQuestions
+   			<-- askQuestion
+rockQuestions		
+   			<-- askQuestion
+currentPlayer
+			<-- roll
+			<-- currentcategory
+			<-- wasCorrectlyAnswered
+			<-- wrongAnswer
+			<--	didPlayerWin 
