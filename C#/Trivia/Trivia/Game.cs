@@ -66,8 +66,7 @@ namespace UglyTrivia
 
 		static bool IsOddRoll (int roll)
 		{
-			var i = (roll % 2);
-			return i != 0;
+			return (roll % 2) != 0;
 		}
 
 		void MovePlayer (int roll)
@@ -75,6 +74,7 @@ namespace UglyTrivia
 			places [currentPlayer] = places [currentPlayer] + roll;
 			if (places [currentPlayer] > 11)
 				places [currentPlayer] = places [currentPlayer] - 12;
+			NotifyMove();
 		}
 
 		void NotifyRoll (int roll)
@@ -83,7 +83,7 @@ namespace UglyTrivia
 			Console.WriteLine ("They have rolled a " + roll);
 		}
 
-		void NotifyNewLocation ()
+		void NotifyMove ()
 		{
 			Console.WriteLine (players [currentPlayer] + "'s new location is " + places [currentPlayer]);
 			Console.WriteLine ("The category is " + currentCategory ());
@@ -99,24 +99,38 @@ namespace UglyTrivia
 			Console.WriteLine (players [currentPlayer] + " is not getting out of the penalty box");
 		}
 
+		bool CanLeavePenaltyBox (int roll)
+		{
+
+			if (IsOddRoll(roll)) {
+				NotifyPenaltyBoxEscape ();
+				return true;
+			}
+			else {
+				NotifyFailureOfPenaltyBoxEscape ();
+				return false;
+			}
+		}
+
+		bool CanMove (int roll)
+		{
+			if (inPenaltyBox [currentPlayer]) {
+				isGettingOutOfPenaltyBox = CanLeavePenaltyBox (roll);
+				return isGettingOutOfPenaltyBox;
+
+			}
+
+			return true;
+		}
 
         public void roll(int roll)
         {
             NotifyRoll (roll);
-            if (!inPenaltyBox [currentPlayer]) {
-				MovePlayer (roll);
-			} 
-			else {
-				isGettingOutOfPenaltyBox = IsOddRoll (roll);
-				if (isGettingOutOfPenaltyBox) {
-					NotifyPenaltyBoxEscape ();
-					MovePlayer (roll);
-				} else {
-					NotifyFailureOfPenaltyBoxEscape ();
-					return;
-				}
-			}
-			NotifyNewLocation();
+            if(!CanMove (roll))
+				return;
+
+			MovePlayer (roll);
+
 			askQuestion();
 
         }
@@ -185,8 +199,6 @@ namespace UglyTrivia
                     if (currentPlayer == players.Count) currentPlayer = 0;
                     return true;
                 }
-
-
 
             }
             else
