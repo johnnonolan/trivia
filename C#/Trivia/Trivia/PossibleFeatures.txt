@@ -2,3 +2,4 @@ a) Want to look at running the game on mobile/web/something
 So messages can't go through Console
 b) want to load in questions from an external resourse
 c) ability to skip a question if you roll 2 6s
+d) want to add answers.

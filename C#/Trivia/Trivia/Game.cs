@@ -64,49 +64,60 @@ namespace UglyTrivia
             return players.Count;
         }
 
-		//we know there is something to do with PenaltyBox
-		//
+		static bool IsOddRoll (int roll)
+		{
+			var i = (roll % 2);
+			return i != 0;
+		}
+
+		void MovePlayer (int roll)
+		{
+			places [currentPlayer] = places [currentPlayer] + roll;
+			if (places [currentPlayer] > 11)
+				places [currentPlayer] = places [currentPlayer] - 12;
+		}
+
+		void NotifyRoll (int roll)
+		{
+			Console.WriteLine (players [currentPlayer] + " is the current player");
+			Console.WriteLine ("They have rolled a " + roll);
+		}
+
+		void NotifyNewLocation ()
+		{
+			Console.WriteLine (players [currentPlayer] + "'s new location is " + places [currentPlayer]);
+			Console.WriteLine ("The category is " + currentCategory ());
+		}
+
+		void NotifyPenaltyBoxEscape ()
+		{
+			Console.WriteLine (players [currentPlayer] + " is getting out of the penalty box");
+		}
+
+		void NotifyFailureOfPenaltyBoxEscape ()
+		{
+			Console.WriteLine (players [currentPlayer] + " is not getting out of the penalty box");
+		}
+
 
         public void roll(int roll)
         {
-            Console.WriteLine(players[currentPlayer] + " is the current player");
-            Console.WriteLine("They have rolled a " + roll);
-
-            if (inPenaltyBox[currentPlayer])
-            {
-                if (roll % 2 != 0)
-                {
-                    isGettingOutOfPenaltyBox = true;
-
-                    Console.WriteLine(players[currentPlayer] + " is getting out of the penalty box");
-            	        places[currentPlayer] = places[currentPlayer] + roll;
-                    if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
-
-                    Console.WriteLine(players[currentPlayer]
-                            + "'s new location is "
-                            + places[currentPlayer]);
-                    Console.WriteLine("The category is " + currentCategory());
-                    askQuestion();
-                }
-                else
-                {
-                    Console.WriteLine(players[currentPlayer] + " is not getting out of the penalty box");
-                    isGettingOutOfPenaltyBox = false;
-                }
-
-            }
-            else
-            {
-
-                places[currentPlayer] = places[currentPlayer] + roll;
-                if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
-
-                Console.WriteLine(players[currentPlayer]
-                        + "'s new location is "
-                        + places[currentPlayer]);
-                Console.WriteLine("The category is " + currentCategory());
-                askQuestion();
-            }
+            NotifyRoll (roll);
+            if (!inPenaltyBox [currentPlayer]) {
+				MovePlayer (roll);
+			} 
+			else {
+				isGettingOutOfPenaltyBox = IsOddRoll (roll);
+				if (isGettingOutOfPenaltyBox) {
+					NotifyPenaltyBoxEscape ();
+					MovePlayer (roll);
+				} else {
+					NotifyFailureOfPenaltyBoxEscape ();
+					return;
+				}
+			}
+			NotifyNewLocation();
+			askQuestion();
 
         }
 
